@@ -105,7 +105,7 @@ Renamed --input-unix-socket to --input-ipc-server since mpv v0.17.0"
 (defun emms-player-simple-mpv-get-version ()
   "Return mpv version."
   (with-temp-buffer
-    (unless (zerop (call-process "mpv" nil t "--verison"))
+    (unless (zerop (call-process "mpv" nil t "--version"))
       (error "Failed to get mpv version"))
     (goto-char (point-min))
     (if (re-search-forward
